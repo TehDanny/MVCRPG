@@ -28,13 +28,16 @@ namespace MVCRPG.Controllers
 
         // POST: Character/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(string name)
         {
             try
             {
                 // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
+                Models.Character model = new Models.Character(name);
+                Models.GlobalVariables.Characters.Add(model);
+
+                return RedirectToAction("Index", model);
             }
             catch
             {
@@ -50,7 +53,7 @@ namespace MVCRPG.Controllers
 
         // POST: Character/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Models.Character model)
         {
             try
             {
@@ -72,7 +75,7 @@ namespace MVCRPG.Controllers
 
         // POST: Character/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Models.Character model)
         {
             try
             {

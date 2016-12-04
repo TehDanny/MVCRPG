@@ -16,5 +16,20 @@ namespace MVCRPG.Models
             Name = name;
             Health = defaultHealth;
         }
+
+        /*
+        public static void Create(string name)
+        {
+            Character character = new Character(name);
+            if (GlobalVariables.Characters == null)
+                GlobalVariables.Characters = new List<Character>();
+            GlobalVariables.Characters.Add(character);
+        }
+        */
+
+        public static List<Character> GetAll()
+        {
+            return GlobalVariables.Characters;
+        }
     }
 }

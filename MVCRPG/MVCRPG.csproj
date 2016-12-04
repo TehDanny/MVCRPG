@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\Equipment.cs" />
+    <Compile Include="Models\GlobalVariables.cs" />
     <Compile Include="Models\Quest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
