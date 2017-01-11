@@ -11,7 +11,7 @@ namespace MVCRPG.Controllers
         // GET: Character
         public ActionResult Index()
         {
-            return View();
+                return View(Models.GlobalVariables.Characters);
         }
 
         // GET: Character/Details/5
@@ -37,7 +37,8 @@ namespace MVCRPG.Controllers
                 Models.Character model = new Models.Character(name);
                 Models.GlobalVariables.Characters.Add(model);
 
-                return RedirectToAction("Index", model);
+                //return View("Index", model);                              // single object
+                return View("Index", Models.GlobalVariables.Characters);    // list
             }
             catch
             {

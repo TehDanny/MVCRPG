@@ -10,12 +10,17 @@
 }
 
 <div>
-    @foreach (var item in Model)
-    {
+    
         <ul>
+            @foreach (var item in Model)
+            {
             <li>
                 <label>@item.Name</label>
             </li>
+            }
         </ul>
-    }
 </div>
+
+@Html.ActionLink("Create character", "Create", "Character")<br />
+@Html.ActionLink("Return to home", "Index", "Home")
+
